@@ -1,0 +1,7 @@
+flask
+opencv-python
+numpy
+torch
+torchvision
+python-telegram-bot
+gunicorn

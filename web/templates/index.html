@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Telegram Image Cleaner</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body { font-family: Arial; background:#f5f5f5; padding:20px }
+canvas { border:2px solid #000; touch-action:none }
+button { padding:8px 14px; margin:5px; font-size:15px }
+#loading { display:none; color:green; font-weight:bold }
+</style>
+</head>
+<body>
+
+<h2>Red Brush Image Cleaner</h2>
+
+<input type="file" id="upload" accept="image/*"><br><br>
+
+Brush size:
+<input type="range" id="brushSize" min="10" max="100" value="30"><br><br>
+
+<button onclick="undo()">Undo</button>
+<button onclick="toggleLock()" id="lockBtn">Lock Brush</button><br><br>
+
+<div id="loading">Cleaning image...</div>
+
+<canvas id="canvas"></canvas><br><br>
+
+<button onclick="send()">Clean Image</button>
+<button onclick="download()">Download Image</button>
+
+<script src="/static/js/brush.js"></script>
+</body>
+</html>
