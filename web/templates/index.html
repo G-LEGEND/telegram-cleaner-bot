@@ -1,27 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Telegram Image Cleaner</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Red Brush Cleaner</title>
+
 <style>
-body { font-family: Arial; background:#f5f5f5; padding:20px }
-canvas { border:2px solid #000; touch-action:none }
-button { padding:8px 14px; margin:5px; font-size:15px }
-#loading { display:none; color:green; font-weight:bold }
+  body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    padding: 30px;
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
+  canvas {
+    border: 2px solid #000;
+    margin-top: 15px;
+    cursor: crosshair;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+  #controls {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  button {
+    padding: 8px 14px;
+    font-size: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  #loading {
+    display: none;
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+  }
 </style>
 </head>
+
 <body>
+<h2>Red Brush Cleaner</h2>
 
-<h2>Red Brush Image Cleaner</h2>
+<input type="file" id="upload" accept="image/*">
 
-<input type="file" id="upload" accept="image/*"><br><br>
-
-Brush size:
-<input type="range" id="brushSize" min="10" max="100" value="30"><br><br>
-
-<button onclick="undo()">Undo</button>
-<button onclick="toggleLock()" id="lockBtn">Lock Brush</button><br><br>
+<div id="controls">
+  Brush size:
+  <input type="range" id="brushSize" min="10" max="100" value="30">
+  <button onclick="undo()">Undo</button>
+  <button id="lockBtn" onclick="toggleLock()">Lock Brush</button>
+</div>
 
 <div id="loading">Cleaning image...</div>
 
